@@ -1,0 +1,41 @@
+@import "./contacts";
+@import "./global";
+@import "./mixins";
+@import "./musthad";
+@import "./navbar";
+@import "./portfolio";
+@import "./varibles";
+
+
+.cube{
+@include displayFlex(row, center, center);
+    .first{
+        border:0.3px solid $defoultColor;
+        width:10%;
+        }
+    .second{
+        color: $defoultColor;
+        padding: 20px;
+        }
+    .third{
+        border:0.3px solid $defoultColor;
+        width: 10%;
+        }
+    }
+
+.cube1{
+    @include displayFlex(row, center, center);
+    .first{
+      border:0.3px solid $starColour;
+      width:10%;
+          }
+    .second{
+        color: $starColour;
+        padding: 20px;
+    }
+    .third{
+        border:0.3px solid $starColour;
+        width: 10%;
+     }
+    }
+    
