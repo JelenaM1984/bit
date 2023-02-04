@@ -1,0 +1,12 @@
+.bg-myphoto-book{
+    background-image: url(./pexels-pixabay-267586.jpg);
+    background-size: cover;
+    color:white;
+    height: 500px;
+}
+.global {
+    background-color: #39A29E; 
+}
+.global1{
+    background-color: #E25854;
+}
