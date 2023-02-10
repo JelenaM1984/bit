@@ -9,15 +9,11 @@ class Exame {
       this.grade
     }`;
   }
-  getStatistics(){
-    
-  }
+
   hasPased() {
     return this.grade > 5;
   }
-  hasFailed() {
-    return this.grade < 5;
-  }
+
 }
 
 // var examination=new Exame('Pera','Peric','10');

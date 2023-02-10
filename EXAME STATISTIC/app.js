@@ -9,6 +9,7 @@ function addStudent(event) {
   return exam;
 }
 
+
 $(document).ready(function (event) {
   // $("body").on('click', addStudent());
   $("#addButton").on("click", function () {
