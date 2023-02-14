@@ -1,0 +1,20 @@
+$defaultColour:#343A40;
+
+.bg-light{
+    background-image: url(./pexels-bruno-massao-2873486.jpg);
+}
+.header{
+    background-color: $defaultColour;
+    color: aliceblue;
+}
+.textsearch{
+    position: relative;
+
+}
+.nav-bg2{
+    background-color: $defaultColour;
+   
+}
+.navbar-brand2{
+    color: aliceblue;  
+}

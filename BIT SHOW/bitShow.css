@@ -1,0 +1,20 @@
+.bg-light {
+  background-image: url(./pexels-bruno-massao-2873486.jpg);
+}
+
+.header {
+  background-color: #343A40;
+  color: aliceblue;
+}
+
+.textsearch {
+  position: relative;
+}
+
+.nav-bg2 {
+  background-color: #343A40;
+}
+
+.navbar-brand2 {
+  color: aliceblue;
+}/*# sourceMappingURL=bitShow.css.map */
