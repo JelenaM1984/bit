@@ -1,5 +1,4 @@
 const url = "https://api.tvmaze.com/search/shows?q=";
-
 var cardHolder = $(".cardholder");
 
 function bitShow(input) {
@@ -17,6 +16,7 @@ function bitShow(input) {
     cardHolder.html("");
     response.forEach(function (item) {
       if (item.show.image === null) {
+        var item = "";
         var randomImage = "./pexels-david-bartus-714926.jpg";
         var newCard = $(
           `<div class="col-4" style="margin-top:2.5rem">
@@ -50,9 +50,7 @@ function bitShow(input) {
     alertElement.text("Failed to connect bitShow API");
     alertElement.toggle();
   });
-  request.always(function () {
-    // alertElement.text("Successful");
-  });
+  request.always(function () {});
 }
 // DOCUMENT READY
 $(document).ready(function () {
@@ -60,19 +58,19 @@ $(document).ready(function () {
   // SEARCH
   $("#textsearch").on("keypress", function (e) {
     if (e.key === "Enter") {
-      var searhText = $("#textsearch").val(); // Ne radi sa '.value'
-      //   alert(searhText);
+      var searhText = $("#textsearch").val();
       bitShow(`${searhText}`);
       e.preventDefault();
     }
   });
 });
-function infoPage(e) {
-  var id = e;
 
-  sessionStorage.setItem("id", id);
-  window.location = "./info.html";
-}
+// function infoPage(e) {
+//   var id = e;
+
+//   sessionStorage.setItem("id", id);
+//   window.location = "./info.html";
+// }
 
 function inputSearch() {
   var req = $.ajax({
@@ -103,11 +101,12 @@ $(document).ready(function () {
   });
   // searchText = "a";
   // bitShow();
-  $("#textsearch").autocomplete({
-    source: autoComp2,
-  });
+
   $("#textsearch").keyup(function () {
     searchText2 = this.value;
     inputSearch();
+  });
+  $("#textsearch").autocomplete({
+    source: autoComp2,
   });
 });
