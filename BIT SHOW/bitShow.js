@@ -16,7 +16,6 @@ function bitShow(input) {
     cardHolder.html("");
     response.forEach(function (item) {
       if (item.show.image === null) {
-        var item = "";
         var randomImage = "./pexels-david-bartus-714926.jpg";
         var newCard = $(
           `<div class="col-4" style="margin-top:2.5rem">

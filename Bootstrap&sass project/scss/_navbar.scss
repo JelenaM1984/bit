@@ -1,3 +1,22 @@
-@import "./varibles";
+@import "./variables";
 @import "./_global.scss";
 
+.navbar {
+    background-color: $colorBlueish;
+    font-weight:bold;
+    a {
+        color:$defoultColor;
+        font-weight: 500;
+    }
+    .navbar-brend{
+        font-weight: bold;
+        color: $defoultColor;
+    }
+    .navbar-toggler-icon{
+        background-image:url(../img/portfolio/hamburger-white.svg);   
+     }
+     .navbar-toggler{
+        color: $defoultColor;
+        background-color: $colorGreen;
+     }
+}

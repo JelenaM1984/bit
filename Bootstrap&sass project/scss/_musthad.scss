@@ -1,0 +1,25 @@
+@import "./variables";
+
+
+
+.musthad {
+    background-color: $colorGreen;
+    padding-top:50px;
+    padding-bottom:20px;
+    margin-bottom: 30px;
+    h1{
+         p {
+        color:$defoultColor;
+        padding-top:15px;
+    }
+        }
+    i{
+        color:$defoultColor;
+        position: relative;
+        top: 3px;
+    }
+    img{
+        height: 300px;
+    }
+    
+}

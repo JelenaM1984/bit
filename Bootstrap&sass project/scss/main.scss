@@ -4,10 +4,10 @@
 @import "./musthad";
 @import "./navbar";
 @import "./portfolio";
-@import "./varibles";
+@import "./variables";
 
 
-.cube{
+.cube {
 @include displayFlex(row, center, center);
     .first{
         border:0.3px solid $defoultColor;
@@ -38,4 +38,42 @@
         width: 10%;
      }
     }
-    
+h2{
+    color:$defoultColor;
+    font-weight: bold;
+    font-size: 100px;
+}
+.col-12 {
+    p{
+    color: $defoultColor;
+    }
+}
+.col-6{
+    p{
+    color: $defoultColor;
+    }
+}
+.footer{
+    background-color: $colorBlueish;
+    h3{
+        color:$defoultColor;
+        font-weight: 500;
+    }
+    p{
+        color:$defoultColor;
+    }
+    i{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid white;
+        padding: 5px;
+        color:$defoultColor;
+    }
+        i:hover {
+            box-shadow: 0 0 2px 1px $defoultColor
+          }
+}
+.end{
+    background-color: $colorBlueish;
+}
