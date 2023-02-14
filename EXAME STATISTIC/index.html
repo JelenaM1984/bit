@@ -26,24 +26,33 @@
         </div>
             <h3>EXAM RESULTS FOR JUN</h3>
             <h6>Total students count</h6>
+            <h6 id="total"></h6>
         </div>
         
         <div class="col-md-6 offset-md-3  global">
-        <table class="table" id="passed">
+        <table class="table" >
           <thead>
               <tr>
                 <th scope="col">Passed</th>
-
+                <th></th>
+              </tr>
+              <tr>
+                <th id="passed">0</th>
+                <th id="passedPerc">0%</th>
               </tr>
           </thead>
         </table>
     </div>
     <div class="col-md-6 offset-md-3  global1">
-        <table class="table" id="failed">
+        <table class="table">
             <thead>
               <tr>
                 <th scope="col">Failed</th>
-
+                <th></th>
+              </tr>
+              <tr >
+                <th id="failed">0</th>
+                <th id="failedPerc">0%</th>
               </tr>
             </thead>
         </table>
@@ -56,12 +65,12 @@
         <div class="col-md-3">
           <label for="subject" class="form-label" id="program">Program</label>
           <select class="form-select" id="subject" required>
-            <option selected disabled value="">Choose...</option>
+            <option selected disabled value="0">Choose...</option>
             <option>JS</option>
             <option>Pyton</option>
             <option>C#</option>
           </select>
-          <div class="invalid-feedback">Please select a valid program.</div>
+          <div class="invalid-feedback">Please select a valid subject.</div>
         </div>
         <div class="col-md-3">
           <label for="validationCustom01" class="form-label"
@@ -88,6 +97,8 @@
               <option>5</option>
               <option>4</option>
               <option>3</option>
+              <option>2</option>
+              <option>1</option>
             </select>
             <div class="invalid-feedback">Please select a valid grade.</div>
           </div>
@@ -108,7 +119,6 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row"></th>
                 </tr>
                </tbody>
             </table>
@@ -122,8 +132,6 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row"></th>
-                  <td></td>
                 </tr>
                </tbody>
             </table>

@@ -1,15 +1,52 @@
-var passedStudnt = 0;
-var failedStudent = 0;
+function validate(program, name, grade) {
+  if (program == "Choose...") {
+    return "Please select a valid subject";
+  } else if (!name || !name.includes(" ")) {
+    return "Please enter a valid student name, include one space between first and last name";
+  } else if (!grade) {
+    return "Please select a valid grade between 1 and 10";
+  }
+
+  return null;
+}
 
 function addStudent(event) {
   var program = $("#subject option:selected").val();
   var name = $("#validationCustom01").val();
-  var nameSplit = name.split(" ");
   var grade = Number($("#validationCustom02 option:selected").val());
+  var validationMessage = validate(program, name, grade);
+  if (validationMessage) {
+    alert(validationMessage);
+    return;
+  }
+
+  var nameSplit = name.split(" ");
   var student = new Student(nameSplit[0], nameSplit[1]);
   var subject = new Subject(program);
   var exam = new Exame(subject, student, grade);
   return exam;
+}
+
+function calculateStatistics(passed) {
+  var totalHeader = $("#total");
+  var total = 1 + Number(totalHeader.text());
+  totalHeader.text(total);
+  var passedTotal = $("#passed");
+  var passedPerc = $("#passedPerc");
+  var failedTotal = $("#failed");
+  var failedPerc = $("#failedPerc");
+  var passedTotalNumber = Number(passedTotal.text());
+  var failedTotalNumber = Number(failedTotal.text());
+  if (passed) {
+    ++passedTotalNumber;
+  } else {
+    ++failedTotalNumber;
+  }
+
+  passedTotal.text(passedTotalNumber);
+  passedPerc.text((passedTotalNumber / total).toFixed(2) * 100 + "%");
+  failedTotal.text(failedTotalNumber);
+  failedPerc.text((failedTotalNumber / total).toFixed(2) * 100 + "%");
 }
 
 $(document).ready(function (event) {
@@ -18,12 +55,15 @@ $(document).ready(function (event) {
     var exam = addStudent();
     console.log(exam.getExameInfo());
     //add statistics
-    if (exam.hasPased()) {
+    var passed = exam.hasPased();
+    if (passed) {
       var table = $("#tableOne");
-      table.find("tbody").append(exam.getExameInfo());
+      table.find("tbody").append(`<tr><td>${exam.getExameInfo()}</td></tr>`);
     } else {
       var tableOne = $("#tableTwo");
-      tableOne.find("tbody").append(exam.getExameInfo());
+      tableOne.find("tbody").append(`<tr><td>${exam.getExameInfo()}</td></tr>`);
     }
+
+    calculateStatistics(passed);
   });
 });
