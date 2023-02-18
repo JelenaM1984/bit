@@ -24,7 +24,7 @@ function bitShow(input) {
                 <div class='card-body'>
                     <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
                     <p class="card-text">${item.show.genres[0]}</p>
-                    <a href='${item.show._links.self.href}' target='_blank' class='btn btn-info' style="color:white;font-weight:bold;font-size:1rem">Go to profile</a>
+                    <a  onclick='goToDetail(${item.show.id})' class='btn btn-info' style="color:white;font-weight:bold;font-size:1rem">Go to detail</a>
                 </div>
             </div>
         </div>`
@@ -37,7 +37,7 @@ function bitShow(input) {
         <div class='card-body'>
             <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
             <p class="card-text">${item.show.genres[0]}</p>
-            <a href='${item.show._links.self.href}' target='_blank' class='btn btn-info' style="color:white;font-weight:bold;font-size:1rem">Go to profile</a>
+            <a onclick='goToDetail(${item.show.id})' class='btn btn-info' style="color:white;font-weight:bold;font-size:1rem">Go to profile</a>
                 </div>
     </div>
 </div>`);
@@ -64,48 +64,32 @@ $(document).ready(function () {
   });
 });
 
-// function infoPage(e) {
-//   var id = e;
-
-//   sessionStorage.setItem("id", id);
-//   window.location = "./info.html";
-// }
-
-function inputSearch() {
-  var req = $.ajax({
-    url: `${url}${searchText2}`,
-    method: "GET",
-  });
-  req
-    .done(function (response) {
-      console.log(response);
-
-      response.forEach(function (item) {
-        var newItem = item.show.name;
-        autoComp2.push(newItem);
-      });
-    })
-    .fail(function (response) {
-      console.log(response);
-    })
-    .always(function (response) {
-      console.log("zahtev zavsen");
-    });
-}
-var autoComp2 = [];
 $(document).ready(function () {
-  $("#textsearch").change(function () {
-    searchText = this.value;
-    bitShow();
-  });
-  // searchText = "a";
-  // bitShow();
-
   $("#textsearch").keyup(function () {
     searchText2 = this.value;
-    inputSearch();
   });
   $("#textsearch").autocomplete({
-    source: autoComp2,
+    source: function (request, response) {
+      $.get(`${url}${searchText2}`, function (data) {
+        response(
+          $.map(data, function (item) {
+            return {
+              value: item.show.id,
+              label: item.show.name,
+            };
+          })
+        );
+      });
+    },
+    select: function (event, ui) {
+      goToDetail(ui.item.value, ui.item.label);
+      ui.item.value = ui.item.label;
+      return ui.item.label;
+    },
   });
 });
+
+function goToDetail(id) {
+  sessionStorage.setItem("movieId", id);
+  location.assign("info.html");
+}

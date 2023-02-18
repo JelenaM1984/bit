@@ -6,18 +6,16 @@ $defaultColour:#343A40;
 .header{
     background-color: $defaultColour;
     color: aliceblue;
-}
-.textsearch{
-    position: relative;
-
+    border-radius: 5rem;
 }
 .nav-bg2{
     background-color: $defaultColour;
+    border-radius: 5rem;
    
 }
 .navbar-brand2{
     color: aliceblue;  
 }
-.col-4{
-    color:aliceblue
+.text-center{
+    color: aliceblue;
 }

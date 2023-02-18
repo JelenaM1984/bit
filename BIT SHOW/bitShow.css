@@ -5,20 +5,18 @@
 .header {
   background-color: #343A40;
   color: aliceblue;
-}
-
-.textsearch {
-  position: relative;
+  border-radius: 5rem;
 }
 
 .nav-bg2 {
   background-color: #343A40;
+  border-radius: 5rem;
 }
 
 .navbar-brand2 {
   color: aliceblue;
 }
 
-.col-4 {
+.text-center {
   color: aliceblue;
 }/*# sourceMappingURL=bitShow.css.map */
