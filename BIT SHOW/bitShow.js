@@ -64,9 +64,24 @@ $(document).ready(function () {
   });
 });
 
+// function infoPage(e) {
+//   var id = e;
+
+//   sessionStorage.setItem("id", id);
+//   window.location = "./info.html";
+// }
+
 $(document).ready(function () {
+  // $("#textsearch").change(function () {
+  //   searchText = this.value;
+  //   bitShow();
+  // });
+  // searchText = "a";
+  // bitShow();
+
   $("#textsearch").keyup(function () {
     searchText2 = this.value;
+    // inputSearch();
   });
   $("#textsearch").autocomplete({
     source: function (request, response) {
