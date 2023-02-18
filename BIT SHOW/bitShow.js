@@ -18,7 +18,7 @@ function bitShow(input) {
       if (item.show.image === null) {
         var randomImage = "./pexels-david-bartus-714926.jpg";
         var newCard = $(
-          `<div class="col-4" style="margin-top:2.5rem">
+          `<div class="col-xl-4 col-sm-5 col-xs-12" style="margin-top:2.5rem">
             <div class="card" style="width:18rem">
                 <img src="${randomImage}" class="card-img-top" alt="noImage" style="width 100%;height:400px">
                 <div class='card-body'>
@@ -31,7 +31,8 @@ function bitShow(input) {
         );
         cardHolder.append(newCard);
       } else {
-        var newCard = $(`<div class="col-4" style="margin-top:2.5rem">
+        var newCard =
+          $(`<div class="col-xl-4 col-sm-5 col-xs-12" style="margin-top:2.5rem">
     <div class="card" style="width:18rem">
         <img src="${item.show.image.medium}" class="card-img-top" alt="image">
         <div class='card-body'>
@@ -64,21 +65,7 @@ $(document).ready(function () {
   });
 });
 
-// function infoPage(e) {
-//   var id = e;
-
-//   sessionStorage.setItem("id", id);
-//   window.location = "./info.html";
-// }
-
 $(document).ready(function () {
-  // $("#textsearch").change(function () {
-  //   searchText = this.value;
-  //   bitShow();
-  // });
-  // searchText = "a";
-  // bitShow();
-
   $("#textsearch").keyup(function () {
     searchText2 = this.value;
     // inputSearch();
