@@ -1,6 +1,6 @@
 class Mouvie {
-  constructor(name, duration, genre) {
-    this.name = name;
+  constructor(title, duration, genre) {
+    this.title = title;
     this.duration = duration;
     this.genre = genre;
   }
@@ -13,31 +13,35 @@ class Mouvie {
   }
   getMouvie() {
     return {
-      name: this.name,
+      name: this.title,
       duration: Number(this.duration),
       genre: this.genre,
     };
   }
 }
-/* creating class Program */
+
 class Program {
-  constructor(date, movieList, fullDuration) {
+  constructor(date) {
     this.date = date;
-    this.movieList = movieList;
-    this.fullDuration = fullDuration;
+    this.movieNumber = film.length;
+    this.movies = [];
+    this.duration = 0;
   }
 
-  getData() {
-    return `${this.date}, ${this.movieListCount} movies, duration: ${this.fullDuration}min`;
+  getInfo() {
+    if (this.movies.length == 0) {
+      return `${this.date}, program, duration: 0`;
+    } else {
+      var movieDuration = 0;
+      this.movies.forEach((item) => {
+        movieDuration += item.length;
+      });
+      var description = this.movies.length == 1 ? "movie" : "movies";
+      return `${this.date}, ${this.movies.length} ${description}, duration: ${movieDuration}`;
+    }
   }
-}
 
-class MovieProgram {
-  constructor(movie, program) {
-    this.movie = movie;
-    this.program = program;
-  }
-  getData() {
-    return `${this.movie} - ${this.program}`;
+  addMovie(movie) {
+    this.movies.push(movie);
   }
 }

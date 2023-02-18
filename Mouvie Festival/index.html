@@ -19,18 +19,17 @@
     ></script>
   </head>
   <body>
-    <div class="conteiner-fluid">
+    <div class="conteiner">
       <div class="row text-center m-3">
         <div class="col-offset-3">
           <h1>MOUVIE FESTIVAL</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <form class="g-3 needs-validation" novalidate>
+        <div class="col-4">
           <h4>Please fill in the form</h4>
           <h6>Mouvie</h6>
         </div>
-      </div>
       <div class="row">
         <div class="col-12">
           <div class="mb-3">
@@ -40,7 +39,7 @@
             <input
               type="text"
               class="form-control"
-              id="inputMouvie"
+              id="inputTitle"
               placeholder="Title of the Mouvie"
             />
           </div>
@@ -63,15 +62,17 @@
       </div>
       <div class="row">
         <div class="col-12 mb-3">
+          <label for="genre" id="genre">Genre</label>
           <select
             class="form-select"
             aria-label="Default select example"
             id="options"
+            required
           >
-            <option selected>Open this select menu</option>
-            <option value="1">Drama</option>
-            <option value="2">Cartoon</option>
-            <option value="3">Action</option>
+            <option selected disabled value="0">Open this select menu</option>
+            <option value="Drama">Drama</option>
+            <option value="Cartoon">Cartoon</option>
+            <option value="Action">Action</option>
           </select>
         </div>
       </div>
@@ -79,12 +80,14 @@
         <div class="col-12">
           <button type="button" class="btn btn-success" id="addButton">
             Create mouvie
-          </button>
+          </button> 
+
         </div>
       </div>
+ 
       <div class="row">
         <div class="col-9">
-          <table class="table">
+          <table class="table" id="tabela">
             <thead>
               <tr>
                 <th scope="col">Mouvie</th>
@@ -92,12 +95,14 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row" id="mouvie"></th>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+    </form>
+  </div>
       <div class="row">
         <div class="col">
           <h6>Program</h6>
@@ -115,7 +120,7 @@
             <input
               type="date"
               class="form-control"
-              id="exampleFormControlInput1"
+              id="date"
               placeholder="Date"
             />
           </div>
@@ -123,22 +128,23 @@
       </div>
       <div class="row text-center">
         <div class="col-12">
-          <button type="button" class="btn btn-success" id="addButton">
+          <button type="button" class="btn btn-success" id="createProgram" onclick="createProgram()">
             Create program
           </button>
+          <div class="program-list">
+            <ul></ul>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12 mb-3 m-3">
+        <div class="col-12 mb-3">
           <select
             class="form-select"
             aria-label="Default select example"
-            id="options"
+            id="selectMouvie"
           >
-            <option selected>Mouvie</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option selected>Mouvies</option>
+            <option value="0"></option>
           </select>
         </div>
       </div>
@@ -146,17 +152,15 @@
         <select
           class="form-select"
           aria-label="Default select example"
-          id="options"
+          id="selectProgram"
         >
           <option selected>Program</option>
-          <option value="1">Drama</option>
-          <option value="2">Cartoon</option>
-          <option value="3">Action</option>
+          <option value="0"></option>
         </select>
       </div>
       <div class="row text-center">
         <div class="col-12">
-          <button type="button" class="btn btn-success" id="addButton">
+          <button type="button" class="btn btn-success" id="addToProgram" onclick="addProgram()">
             Add mouvie to program
           </button>
         </div>
