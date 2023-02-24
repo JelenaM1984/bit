@@ -34,12 +34,12 @@ function fetchShowInfo() {
       }
       var newCard = $(
         `<div id="InfoDate">
-          <h1><span id="title">Title:</span> ${res.name}</h1>
-           <div class="row">
-           <div class="col-xl-4 col-md-6 col-sm-12" style="margin-top:5rem">
-               <img src="${newImage}" class="card-img-top" alt="no Image" id="noImage" style='width:20rem'>
+          <h1 style="text-align:center"><span id="title" >Title:</span> ${res.name}</h1>
+           <div class="row d-flex justify-content-center">
+           <div class="col-lg-4 col-md-6 col-sm-12 " style="margin-top:5rem">
+               <img src="${newImage}" class="img-thumbnail" alt="no Image" id="noImage" style='width:20rem'>
            </div>
-           <div class="col-lg-6 col-md-8 col-sm-12" style="margin-top:5rem">
+           <div class="col-lg-4 col-md-6 col-sm-12 " style="margin-top:5rem">
                <h3>Sesons</h3>
                <div id="sesons">${show.seasons}</div>
                <h3>Cast</h3>
@@ -60,3 +60,4 @@ function fetchShowInfo() {
       console.log(err);
     });
 }
+//find episode list

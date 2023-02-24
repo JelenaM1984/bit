@@ -18,9 +18,9 @@ function bitShow(input) {
       if (item.show.image === null) {
         var randomImage = "./pexels-david-bartus-714926.jpg";
         var newCard = $(
-          `<div class="col-xl-4 col-md-5 col-xs-12" style="margin:10px">
+          `<div class="col-lg-4 col-md-6 col-xs-12  mt-3">
             <div class="card" style="width:19rem">
-                <img src="${randomImage}" class="card-img-top" alt="noImage" style="width 100%;height:430px">
+                <img src="${randomImage}" class="img-thumbnail" alt="noImage" style="width 100%;height:430px">
                 <div class='card-body'>
                     <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
                     <p class="card-text">${item.show.genres[0]}</p>
@@ -31,10 +31,9 @@ function bitShow(input) {
         );
         cardHolder.append(newCard);
       } else {
-        var newCard =
-          $(`<div class="col-xl-4 col-md-5 col-xs-12" style="margin:10px">
+        var newCard = $(`<div class="col-lg-4 col-md-6 col-xs-12 mt-3">
     <div class="card" style="width:19rem">
-        <img src="${item.show.image.original}" class="card-img-top" alt="image">
+        <img src="${item.show.image.original}" class="img-thumbnail" alt="image">
         <div class='card-body'>
             <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
             <p class="card-text">${item.show.genres[0]}</p>
