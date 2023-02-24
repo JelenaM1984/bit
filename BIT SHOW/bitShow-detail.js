@@ -36,14 +36,14 @@ function fetchShowInfo() {
         `<div id="InfoDate">
           <h1><span id="title">Title:</span> ${res.name}</h1>
            <div class="row">
-           <div class="col-lg-6 col-md-4 col-sm-12" style="margin-top:2.5rem">
+           <div class="col-xl-4 col-md-6 col-sm-12" style="margin-top:5rem">
                <img src="${newImage}" class="card-img-top" alt="no Image" id="noImage" style='width:20rem'>
            </div>
-           <div class="col-lg-6 col-md-4 col-sm-12" style="margin-top:2.5rem">
+           <div class="col-lg-6 col-md-8 col-sm-12" style="margin-top:5rem">
                <h3>Sesons</h3>
-               <div id="Sesons"></div>
+               <div id="sesons">${show.seasons}</div>
                <h3>Cast</h3>
-               <div id="Cast"></div>
+               <div id="cast">${show.cast}</div>
            </div>
            </div>
            <h3>Show Details</h3>
