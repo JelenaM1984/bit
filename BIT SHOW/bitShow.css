@@ -1,5 +1,7 @@
 .bg-light {
   background-image: url(./pexels-bruno-massao-2873486.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -26,4 +28,8 @@
   height: 80px;
   border-radius: 50%;
   text-align: center;
+}
+
+#InfoDate {
+  color: antiquewhite;
 }/*# sourceMappingURL=bitShow.css.map */

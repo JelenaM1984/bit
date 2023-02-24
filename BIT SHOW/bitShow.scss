@@ -2,6 +2,9 @@ $defaultColour:#343A40;
 
 .bg-light{
     background-image: url(./pexels-bruno-massao-2873486.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 .header{
     background-color: $defaultColour;
@@ -24,4 +27,7 @@ $defaultColour:#343A40;
     height: 80px;
     border-radius: 50%;
     text-align: center;
+}
+#InfoDate{
+    color:antiquewhite;
 }
