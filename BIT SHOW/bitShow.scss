@@ -2,6 +2,9 @@ $defaultColour:#343A40;
 
 .bg-light{
     background-image: url(./pexels-bruno-massao-2873486.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 .header{
     background-color: $defaultColour;
@@ -23,5 +26,37 @@ $defaultColour:#343A40;
     width: 80px;    
     height: 80px;
     border-radius: 50%;
+    text-align: center;
+}
+#InfoDate{
+    color:antiquewhite;
+}
+h3{
+background-color: black;
+border-radius:50px;
+text-align: center;
+margin-top: 5px;
+}
+div#cast{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: whitesmoke;
+background-color: #343A40;
+border-radius: 80px;
+text-align: center;
+}
+div#sesons{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: whitesmoke;
+background-color: #343A40;
+border-radius: 80px;
+text-align: center;
+}
+p{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: whitesmoke;
+background-color: #343A40;
+text-align: center;
+}
+h1{
     text-align: center;
 }

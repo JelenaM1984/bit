@@ -24,7 +24,34 @@ function fetchShowInfo() {
       res._embedded.cast.forEach(({ person }) => {
         show.cast.push(person.name);
       });
-
+      var repos = $(`.repos`);
+      repos.html("");
+      var newImage = "";
+      if (res.image == null) {
+        newImage = "./pexels-david-bartus-714926.jpg";
+      } else {
+        newImage = res.image.original;
+      }
+      var newCard = $(
+        `<div id="InfoDate">
+          <h1 style="text-align:center"><span id="title" >Title:</span> ${res.name}</h1>
+           <div class="row d-flex justify-content-center">
+           <div class="col-lg-4 col-md-6 col-sm-12 " style="margin-top:5rem">
+               <img src="${newImage}" class="img-thumbnail" alt="no Image" id="noImage" style='width:20rem'>
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-12 " style="margin-top:5rem">
+               <h3>Sesons</h3>
+               <div id="sesons">${show.seasons}</div>
+               <h3>Cast</h3>
+               <div id="cast">${show.cast}</div>
+           </div>
+           </div>
+           <h3>Show Details</h3>
+           <p>${res.summary}</p>
+       </div>
+        `
+      );
+      repos.append(newCard);
       console.log(show);
       return show;
     })
@@ -33,3 +60,4 @@ function fetchShowInfo() {
       console.log(err);
     });
 }
+//find episode list

@@ -18,9 +18,9 @@ function bitShow(input) {
       if (item.show.image === null) {
         var randomImage = "./pexels-david-bartus-714926.jpg";
         var newCard = $(
-          `<div class="col-xl-4 col-sm-5 col-xs-12" style="margin-top:2.5rem">
-            <div class="card" style="width:18rem">
-                <img src="${randomImage}" class="card-img-top" alt="noImage" style="width 100%;height:400px">
+          `<div class="col-lg-4 col-md-6 col-xs-12  mt-3">
+            <div class="card" style="width:19rem">
+                <img src="${randomImage}" class="img-thumbnail" alt="noImage" style="width 100%;height:430px">
                 <div class='card-body'>
                     <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
                     <p class="card-text">${item.show.genres[0]}</p>
@@ -31,10 +31,9 @@ function bitShow(input) {
         );
         cardHolder.append(newCard);
       } else {
-        var newCard =
-          $(`<div class="col-xl-4 col-sm-5 col-xs-12" style="margin-top:2.5rem">
-    <div class="card" style="width:18rem">
-        <img src="${item.show.image.medium}" class="card-img-top" alt="image">
+        var newCard = $(`<div class="col-lg-4 col-md-6 col-xs-12 mt-3">
+    <div class="card" style="width:19rem">
+        <img src="${item.show.image.original}" class="img-thumbnail" alt="image">
         <div class='card-body'>
             <h5 class='card-title' style="font-size:1.5rem">${item.show.name}</h5>
             <p class="card-text">${item.show.genres[0]}</p>
@@ -93,5 +92,5 @@ $(document).ready(function () {
 
 function goToDetail(id) {
   sessionStorage.setItem("movieId", id);
-  location.assign("info.html");
+  location.assign("./info.html");
 }
