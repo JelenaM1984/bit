@@ -1,4 +1,4 @@
-class Exame {
+export class Exame {
   constructor(subject, student, grade) {
     this.subject = subject;
     this.student = student;
