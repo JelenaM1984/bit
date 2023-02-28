@@ -50,7 +50,6 @@ function calculateStatistics(passed) {
 }
 
 $(document).ready(function (event) {
-  // $("body").on('click', addStudent());
   $("#addButton").on("click", function () {
     var exam = addStudent();
     console.log(exam.getExameInfo());

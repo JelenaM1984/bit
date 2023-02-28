@@ -1,5 +1,5 @@
 var program = [];
-var mouvies = [];
+var allmouvies = [];
 var film = [];
 
 function validate(title, duration, genre) {
@@ -36,20 +36,15 @@ $(document).ready(function (event) {
   });
 });
 
-var allPrograms = [];
-
 //onclick button Create program
-
+var allPrograms = [];
 function createProgram() {
   var date = $("#date").val();
   var newDate = new Date(date).toLocaleDateString("de-DE");
 
   var newProgram = new Program(newDate);
   var program = $(`<option>${newProgram.getInfo()}</option>`);
-  $("#addToProgram").append(program);
-
-  var prog = `<li>${newProgram.getInfo()}</li>`;
-  $(".program-list ul").append(prog);
+  $(".program-list").append(program);
 
   allPrograms.push(newProgram);
 

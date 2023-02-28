@@ -23,25 +23,23 @@ class Mouvie {
 class Program {
   constructor(date) {
     this.date = date;
-    this.movieNumber = film.length;
-    this.movies = [];
-    this.duration = 0;
+    this.mouvieNumber = film.length;
+    this.movieDuration = 0;
+    var film = [];
   }
 
   getInfo() {
-    if (this.movies.length == 0) {
+    if (this.mouvieNumber == 0) {
       return `${this.date}, program, duration: 0`;
     } else {
       var movieDuration = 0;
-      this.movies.forEach((item) => {
-        movieDuration += item.length;
+      this.film.forEach((item) => {
+        movieDuration += film.length;
       });
-      var description = this.movies.length == 1 ? "movie" : "movies";
-      return `${this.date}, ${this.movies.length} ${description}, duration: ${movieDuration}`;
+      return `${this.date}, ${this.film.length}, duration: ${movieDuration}`;
     }
   }
-
-  addMovie(movie) {
-    this.movies.push(movie);
-  }
+  // addMouvie(mouvie) {
+  //   this.film.push(mouvie);
+  // }
 }
