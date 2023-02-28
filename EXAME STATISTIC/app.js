@@ -1,14 +1,7 @@
-function validate(program, name, grade) {
-  if (program == "Choose...") {
-    return "Please select a valid subject";
-  } else if (!name || !name.includes(" ")) {
-    return "Please enter a valid student name, include one space between first and last name";
-  } else if (!grade) {
-    return "Please select a valid grade between 1 and 10";
-  }
-
-  return null;
-}
+import { validate } from './form.js';
+import { Subject } from './subject.js';
+import { Student } from './student.js';
+import { Exame } from './exame.js';
 
 function addStudent(event) {
   var program = $("#subject option:selected").val();
@@ -66,3 +59,5 @@ $(document).ready(function (event) {
     calculateStatistics(passed);
   });
 });
+
+export { addStudent, calculateStatistics }
